@@ -3,12 +3,12 @@ package com.apaaja.eventapplication;
 public class ClassItem {
     private String className;
     private String location;
-   //private String time;
+   private String time;
 
     public ClassItem(String className, String location, String time) {
         this.className = className;
         this.location = location;
-        //this.time = time;
+        this.time = time;
     }
 
     public String getClassName() {
@@ -19,8 +19,8 @@ public class ClassItem {
         return location;
     }
 
-    //public String getTime() {
-        //return time;
-    //}
+    public String getTime() {
+        return time;
+    }
 }
 

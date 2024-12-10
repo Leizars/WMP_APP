@@ -5,6 +5,15 @@
     android:orientation="vertical"
     android:padding="16dp"
     android:gravity="center_vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="20dp"
+        android:textSize="29sp"
+        android:layout_marginBottom="60sp"
+        android:textStyle="bold"
+        android:text="K O A L A" />
 
     <EditText
         android:id="@+id/txtUsername"

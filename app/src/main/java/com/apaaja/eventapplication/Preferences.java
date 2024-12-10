@@ -2,7 +2,6 @@ package com.apaaja.eventapplication;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
 
 public class Preferences {
     static final String Key_Username = "user";
@@ -10,8 +9,9 @@ public class Preferences {
     static final String Key_Status_Login = "status";
 
     private static SharedPreferences getSharedPreference(Context context) {
-        return PreferenceManager.getDefaultSharedPreferences(context);
+        return context.getSharedPreferences("EventAppPreferences", Context.MODE_PRIVATE);
     }
+
 
     public static void setUsername(Context context, String username) {
         SharedPreferences.Editor editor = getSharedPreference(context).edit();
@@ -41,13 +41,5 @@ public class Preferences {
 
     public static boolean getStatusLogin(Context context) {
         return getSharedPreference(context).getBoolean(Key_Status_Login, false);
-    }
-
-    public static void clearLoginStatus(Context context) {
-        SharedPreferences.Editor editor = getSharedPreference(context).edit();
-        editor.remove(Key_Username);
-        editor.remove(Key_Password);
-        editor.remove(Key_Status_Login);
-        editor.apply();
     }
 }

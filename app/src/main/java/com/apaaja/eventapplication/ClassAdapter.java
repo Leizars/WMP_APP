@@ -41,7 +41,7 @@ public class ClassAdapter extends RecyclerView.Adapter<ClassAdapter.ClassViewHol
 
         holder.className.setText(classItem.getClassName());
         holder.location.setText(classItem.getLocation());
-        //holder.time.setText(classItem.getTime());
+        holder.time.setText(classItem.getTime());
 
         if (position == selectedPosition) {
             holder.itemView.setBackgroundColor(ContextCompat.getColor(context, R.color.selected_item));
@@ -85,13 +85,6 @@ public class ClassAdapter extends RecyclerView.Adapter<ClassAdapter.ClassViewHol
             ((android.app.Activity) context).startActivityForResult(takePictureIntent, 1);
         } else {
             Toast.makeText(context, "Camera not found!", Toast.LENGTH_SHORT).show();
-        }
-    }
-
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == 1 && resultCode == android.app.Activity.RESULT_OK) {
-            Intent intent = new Intent(context, StudentDetailActivity.class);
-            context.startActivity(intent);
         }
     }
 }
